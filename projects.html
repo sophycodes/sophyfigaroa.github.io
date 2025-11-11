@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sophy Figaroa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SOPHY FIGAROA</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="content-page">
+        <div class="portfolio-header">
+            <h1>Projects</h1>
+            <p class="portfolio-subtitle">Technical Projects</p>
+            <p class="portfolio-description">
+                I enjoy exploring different ways to visualize data and explore computer vision techniques.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-item">
+                <div class="project-image">
+                    <img src="imgs/cs projects/ColorTransferProject.png" alt="Color Transfer Project" class="project-img">
+                </div>
+                <div class="project-info">
+                    <h3>🎬 Color Transfer Between Movie Scenes</h3>
+                    <p class="project-desc">Automated color transfer between film scenes using a cluster-based framework and five palette matching strategies. Transforms the color style of one scene to resemble another (e.g., The Matrix, La La Land, Harry Potter) while preserving scene semantics.</p>
+                    <div class="project-features">
+                        <strong>Features:</strong>
+                        <ul>
+                            <li>Five color transfer algorithms:
+                                <ul>
+                                    <li>Relative distance-based mapping</li>
+                                    <li>Target frequency (many-to-one and one-to-one)</li>
+                                    <li>Source frequency (one-to-one)</li>
+                                    <li>Depth-based transfer using monocular depth estimation</li>
+                                </ul>
+                            </li>
+                            <li>Preprocessing with CIELAB color space and brightness filtering</li>
+                            <li>Quantitative evaluation using RGB and HSV histograms with Bhattacharyya distance</li>
+                            <li>Visual comparison for qualitative assessment</li>
+                        </ul>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tags">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">OpenCV</span>
+                        </div>
+                        <a href="https://github.com/sophycodes/csci153-film-color-transfer-project" target="_blank" class="github-link">
+                            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <img src="imgs/cs projects/ProteinVR.png" alt="VR Protein Visualization" class="project-img">
+                </div>
+                <div class="project-info">
+                    <h3>🧬 Immersive VR Protein Visualization</h3>
+                    <p class="project-desc">An interactive 3D/VR visualization of the deoxyhemoglobin protein structure (PDB ID: 1A3N) developed using A-Frame. Features multiple view styles including ribbon and ball-and-stick models, with component and chain selection to display individual chains and subunits.</p>
+                    <div class="project-footer">
+                        <div class="project-tags">
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">A-Frame</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">VR</span>
+                        </div>
+                        <a href="https://github.com/sophycodes/vrproteinvisualization" target="_blank" class="github-link">
+                            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <img src="imgs/cs projects/SpotifyDashboard.png" alt="Spotify Dashboard" class="project-img">
+                </div>
+                <div class="project-info">
+                    <h3>🎵 Spotify Music Analytics Dashboard</h3>
+                    <p class="project-desc">An interactive web-based dashboard that visualizes data from the Spotify 2024 dataset using D3.js. Features dynamic scatterplots with zoom and pan functionality, horizontal bar charts for top artists, and platform comparison visualizations across Spotify, YouTube, and TikTok with toggle options for different metrics.</p>
+                    <div class="project-footer">
+                        <div class="project-tags">
+                            <span class="tag">Data Science</span>
+                            <span class="tag">D3.js</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML/CSS</span>
+                        </div>
+                        <a href="https://github.com/sophycodes/spotifydataanalytics" target="_blank" class="github-link">
+                            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

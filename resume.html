@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophy Figaroa - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ── Resume Page Layout ── */
+        .resume-page {
+            padding: 8rem 4rem 6rem 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .resume-header {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--black);
+        }
+
+        .resume-header h1 {
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+
+        .resume-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .resume-contacts a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 1rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .resume-contacts a:hover {
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* ── Section ── */
+        .resume-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .resume-section-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--medium-grey);
+            margin-bottom: 1.75rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--border-grey);
+        }
+
+        /* ── Education ── */
+        .edu-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-school {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .edu-degree {
+            font-size: 1rem;
+            color: var(--dark-grey);
+            margin-top: 0.2rem;
+            font-style: italic;
+        }
+
+        .edu-location {
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+            margin-top: 0.3rem;
+        }
+
+        .edu-gpa {
+            font-size: 0.9rem;
+            color: var(--dark-grey);
+            margin-top: 0.3rem;
+        }
+
+        .edu-courses {
+            font-size: 0.9rem;
+            color: var(--dark-grey);
+            margin-top: 0.4rem;
+            line-height: 1.6;
+        }
+
+        .edu-date {
+            font-size: 0.9rem;
+            color: var(--medium-grey);
+            white-space: nowrap;
+            text-align: right;
+            padding-top: 0.15rem;
+        }
+
+        /* ── Skills ── */
+        .skills-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .skill-row {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 1rem;
+            align-items: baseline;
+        }
+
+        .skill-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark-grey);
+        }
+
+        .skill-value {
+            font-size: 0.95rem;
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+
+        /* ── Work Experience ── */
+        .work-item {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+            align-items: start;
+        }
+
+        .work-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .company-logo-wrap {
+            width: 56px;
+            height: 56px;
+            border: 1px solid var(--border-grey);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--white);
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+
+        .company-logo-wrap img {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+        }
+
+        .company-logo-wrap .logo-initials {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .work-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-company {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .work-company a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .work-company a:hover {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        .work-role {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            font-style: italic;
+            margin-bottom: 0.35rem;
+        }
+
+        .work-date {
+            font-size: 0.88rem;
+            color: var(--medium-grey);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .work-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .work-bullets li {
+            font-size: 0.95rem;
+            color: var(--dark-grey);
+            line-height: 1.7;
+            padding-left: 1.1rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+
+        .work-bullets li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            top: 0.2rem;
+        }
+
+        /* ── Clubs & Projects ── */
+        .club-item {
+            margin-bottom: 2rem;
+        }
+
+        .club-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .club-meta {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .club-org {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .club-role {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .club-date {
+            font-size: 0.88rem;
+            color: var(--medium-grey);
+        }
+
+        .club-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .club-bullets li {
+            font-size: 0.95rem;
+            color: var(--dark-grey);
+            line-height: 1.7;
+            padding-left: 1.1rem;
+            position: relative;
+            margin-bottom: 0.3rem;
+        }
+
+        .club-bullets li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            top: 0.2rem;
+        }
+
+        /* ── Download Button ── */
+        .download-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 2.5rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--black);
+            text-decoration: none;
+            font-size: 1rem;
+            border-bottom: 2px solid var(--black);
+            padding-bottom: 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .resume-page {
+                padding: 7rem 1.5rem 4rem 1.5rem;
+            }
+
+            .resume-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .edu-item {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
+            }
+
+            .edu-date {
+                text-align: left;
+            }
+
+            .work-item {
+                grid-template-columns: 1fr;
+            }
+
+            .company-logo-wrap {
+                display: none;
+            }
+
+            .skill-row {
+                grid-template-columns: 140px 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Nav -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SOPHY FIGAROA</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="resume-page">
+
+        <!-- Header -->
+        <header class="resume-header">
+            <h1>Sophy Figaroa</h1>
+            <div class="resume-contacts">
+                <a href="mailto:sophymfigaroa@gmail.com">sophymfigaroa@gmail.com</a>
+                <!-- <span style="color:var(--medium-grey); font-size:1rem;">+1 (909) 675-8148</span> -->
+                <a href="https://www.linkedin.com/in/sophyfigaroa/" target="_blank">LinkedIn ↗</a>
+                <!-- <a href="https://sophycodes.github.io/sophyfigaroa.github.io/index.html" target="_blank">Portfolio ↗</a> -->
+                <a href="https://github.com/sophycodes" target="_blank">GitHub ↗</a>
+            </div>
+        </header>
+
+        <!-- Education -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">Education</h2>
+
+            <div class="edu-item">
+                <div>
+                    <div class="edu-school">Pomona College</div>
+                    <div class="edu-degree">B.A. Computer Science &amp; Media Studies</div>
+                    <div class="edu-location">Claremont, CA</div>
+                    <div class="edu-gpa">GPA: 3.82 / 4.00</div>
+                    <div class="edu-courses"><strong>Relevant Coursework:</strong> Machine Learning, Economic Statistics, Human-Centered Design, Data Visualization, Big Data</div>
+                </div>
+                <div class="edu-date">May 2026</div>
+            </div>
+
+            <div class="edu-item">
+                <div>
+                    <div class="edu-school">Vrije Universiteit Amsterdam</div>
+                    <div class="edu-degree">Foundations of International Business Management and Creative Coding</div>
+                    <div class="edu-location">Amsterdam, Netherlands</div>
+                    <div class="edu-gpa">Grade: 8.5 / 10</div>
+                </div>
+                <div class="edu-date">Summer 2023</div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">Skills</h2>
+            <div class="skills-rows">
+                <div class="skill-row">
+                    <span class="skill-label">Technical</span>
+                    <span class="skill-value">Python, Java, JavaScript, SQL, P5.js, Three.js, A-Frame, D3.js, HTML/CSS, Git</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Data &amp; Design</span>
+                    <span class="skill-value">Power BI, Microsoft Excel, Figma, Stata</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Languages</span>
+                    <span class="skill-value">Papiamento (Fluent) · Dutch (Professional Working) · Spanish (Conversational) · French (Basic)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">Relevant Work Experience</h2>
+
+            <!-- Aruba Investment Bank -->
+            <div class="work-item">
+                <div class="company-logo-wrap" id="logo-aib">
+                    <img src="imgs/resume/aiblogo.jpeg" alt="AIB"
+                         onerror="this.parentElement.innerHTML='<span class=\'logo-initials\'>AIB</span>'" />
+                </div>
+                <div>
+                    <div class="work-meta">
+                        <div>
+                            <div class="work-company"><a href="https://aib-bank.com/" target="_blank">Aruba Investment Bank</a></div>
+                            <div class="work-role">Data &amp; Product Analyst Intern</div>
+                        </div>
+                        <span class="work-date">May 2025 – Jul 2025</span>
+                    </div>
+                    <ul class="work-bullets">
+                        <li>Built automated M Query workflows in Power BI to collect, clean, and integrate 10+ national economic indicators (interest rates, government bonds, consumer/business indexes, tourism, etc.), auto-populating tables and generating visualizations — eliminating manual Excel entry for the Corporate Finance team, accelerating macroeconomic trend analysis, and enabling more data-driven loan pricing decisions.</li>
+                        <li>Analyzed core banking system migration requirements — including cloud feasibility, integration architecture, and vendor assessments — to support executive selection of a new core banking vendor for an acquired commercial bank.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Doodle HCI Lab -->
+            <div class="work-item">
+                <div class="company-logo-wrap">
+                    <img src="/imgs/resume/doodlelab.jpg" alt="Pomona"
+                         onerror="this.parentElement.innerHTML='<span class=\'logo-initials\'>PC</span>'" />
+                </div>
+                <div>
+                    <div class="work-meta">
+                        <div>
+                            <div class="work-company">Doodle Human Computer Interaction Lab</div>
+                            <div class="work-role">Research Assistant</div>
+                        </div>
+                        <span class="work-date">Sept 2025 – Present</span>
+                    </div>
+                    <ul class="work-bullets">
+                        <li>Collaborating with a team of 3 programmers to build embroidery design software (P5.js, Next.js, Python) with multi-level abstraction — stitch, design, and shape views — providing users greater precision and flexibility in pattern creation.</li>
+                        <li>Designing and iterating software interfaces in Figma and implementing responsive, user-centered front-end components in React to ensure an intuitive and cohesive user experience.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Data to Discovery Caltech -->
+            <div class="work-item">
+                <div class="company-logo-wrap">
+                    <img src="/imgs/resume/datatdiscovery.png" alt="Caltech"
+                         onerror="this.parentElement.innerHTML='<span class=\'logo-initials\'>CIT</span>'" />
+                </div>
+                <div>
+                    <div class="work-meta">
+                        <div>
+                            <div class="work-company"><a href="https://datavis.caltech.edu/" target="_blank">Data to Discovery — Caltech</a></div>
+                            <div class="work-role">Data Visualization Developer</div>
+                        </div>
+                        <span class="work-date">Aug 2025 – Present</span>
+                    </div>
+                    <ul class="work-bullets">
+                        <li>Designing interactive 2D, 3D, and 4D (time-evolving) visualizations of Los Angeles high-rise responses to scenario earthquakes, transforming displacement time-series datasets into dynamic simulations using Python and P5.js to help Caltech researchers visualize structural responses and assess potential vulnerabilities.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pomona College CS TA -->
+            <div class="work-item">
+                <div class="company-logo-wrap">
+                    <img src="imgs/resume/Pomona_College_seal.svg.png" alt="Pomona"
+                         onerror="this.parentElement.innerHTML='<span class=\'logo-initials\'>PC</span>'" />
+                </div>
+                <div>
+                    <div class="work-meta">
+                        <div>
+                            <div class="work-company">Pomona College — Computer Science Department</div>
+                            <div class="work-role">Teaching Assistant</div>
+                        </div>
+                        <span class="work-date">Jan 2024 – Dec 2025</span>
+                    </div>
+                    <ul class="work-bullets">
+                        <li>Mentoring 25 students weekly in Intro to Computer Science and Theory of Computation, clarifying complex concepts and fostering analytical problem-solving.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RK Communications -->
+            <div class="work-item">
+                <div class="company-logo-wrap">
+                    <img src="imgs/resume/rk_pr_logo.jpeg" alt="RK"
+                         onerror="this.parentElement.innerHTML='<span class=\'logo-initials\'>RK</span>'" />
+                </div>
+                <div>
+                    <div class="work-meta">
+                        <div>
+                            <div class="work-company">RK Communications</div>
+                            <div class="work-role">Fashion Communications &amp; PR Intern</div>
+                        </div>
+                        <span class="work-date">Jun 2024 – Aug 2024</span>
+                    </div>
+                    <ul class="work-bullets">
+                        <li>Tracked media coverage, compiled press data, and delivered comprehensive reports for 13 clients, enhancing strategic PR campaigns while improving organization and product discovery across fashion collections.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Clubs & Projects -->
+        <section class="resume-section">
+            <h2 class="resume-section-title">Clubs &amp; Projects</h2>
+
+            <div class="club-item">
+                <div class="club-meta">
+                    <div>
+                        <div class="club-org">Socially Engaged Software Research</div>
+                        <div class="club-role">How to Build a Digital Society: An Analysis of e-Estonia</div>
+                    </div>
+                    <span class="club-date">Spring 2024</span>
+                </div>
+                <ul class="club-bullets">
+                    <li>Investigated Estonia's e-government data exchange network (X-Road) through interviews with 2 government officials and review of technical documentation, documenting the system's secure, interoperable architecture and highlighting how similar solutions can enable small states to build digital societies with limited resources.</li>
+                </ul>
+            </div>
+
+            <div class="club-item">
+                <div class="club-meta">
+                    <div>
+                        <div class="club-org">Sagehen Capital Management</div>
+                        <div class="club-role">Analyst — Consumer Team</div>
+                    </div>
+                    <span class="club-date">Oct 2022 – Aug 2023</span>
+                </div>
+                <ul class="club-bullets">
+                    <li>Analyzed annual reports and pitched 5 consumer companies, providing strategic recommendations on long-term growth prospects to guide investment decisions for $1.25M of Pomona College's Endowment.</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
